@@ -4,26 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb18128d-7b99-44e7-9cc6-0e28f41669ad" name="Changes" comment="criando as tabelas">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HELP.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Db/Migration/V01__criar_e_registrar_categorias.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Db/Migration" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Db/V01__criar_e_registrar_categorias.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Db/VO2_criar_e_registrar_produtos.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Db/Migration/VO2_criar_e_registrar_produtos.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Db/Migration" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Db/V01__criar_e_registrar_categorias.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Db/VO2_criar_e_registrar_produtos.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lvendas/gestao_vendas/GestaoVendasApplication.class" beforeDir="false" />
-    </list>
+    <list default="true" id="eb18128d-7b99-44e7-9cc6-0e28f41669ad" name="Changes" comment="criando as tabelas" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -122,10 +103,18 @@
       <option name="project" value="LOCAL" />
       <updated>1720323323148</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="criando as tabelas">
+      <created>1720895998638</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1720895998638</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="mapeamento de entidades" />
     <MESSAGE value="criando as tabelas" />
     <option name="LAST_COMMIT_MESSAGE" value="criando as tabelas" />
   </component>
