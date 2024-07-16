@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="eb18128d-7b99-44e7-9cc6-0e28f41669ad" name="Changes" comment="criando as tabelas">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lvendas/gestao_vendas/GestaoVendasApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lvendas/gestao_vendas/GestaoVendasApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Db/VO2_criar_e_registrar_produtos.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lvendas/gestao_vendas/controlador/CategoriaControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lvendas/gestao_vendas/controlador/CategoriaControlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lvendas/gestao_vendas/servico/CategoriaServico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lvendas/gestao_vendas/servico/CategoriaServico.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
