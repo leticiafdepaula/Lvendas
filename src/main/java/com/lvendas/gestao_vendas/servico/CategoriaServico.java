@@ -6,6 +6,8 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
+import org.yaml.snakeyaml.events.Event;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -29,6 +31,10 @@ public class CategoriaServico {
         Categoria categoriaSalvar = validarCategoriaExiste(codigo);
           BeanUtils.copyProperties (categoria, categoriaSalvar, "codigo");
           return categoriaRepositorio.save (categoriaSalvar);
+      }
+
+      public void deletar(Long codigo) {
+        categoriaRepositorio.deleteById (codigo);
       }
 
     private Categoria validarCategoriaExiste(Long codigo) {

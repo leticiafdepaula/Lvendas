@@ -2,8 +2,10 @@ package com.lvendas.gestao_vendas.controlador;
 
 import com.lvendas.gestao_vendas.entidade.Categoria;
 import com.lvendas.gestao_vendas.servico.CategoriaServico;
+import io.swagger.annotations.ApiOperation;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.actuate.endpoint.annotation.DeleteOperation;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -36,5 +38,13 @@ public class CategoriaControlador {
     @PostMapping("/{codigo}")
     public ResponseEntity<Categoria> atualizar(@Valid @PathVariable Long codigo, @RequestBody Categoria categoria) {
          return ResponseEntity.ok (categoriaServico.atualizar (codigo, categoria));
+    }
+
+    @ApiOperation (value = "deletar")
+    @DeleteMapping("/{codigo}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable Long codigo) {
+        categoriaServico.deletar (codigo);
+
     }
 }
