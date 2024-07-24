@@ -30,10 +30,23 @@ public class GestaoVendasExceptionHandler extends ResponseEntityExceptionHandler
           String msgUsuario = "Recurso não encontrado.";
           String msgDesenvolvedor = ex.toString ();
           List<Error> errors = Arrays.asList (new Error (msgUsuario, msgDesenvolvedor));
-          return handleExceptionInternal (ex, errors, new HttpHeaders (), HttpStatus.BAD_REQUEST, request);
+          return handleExceptionInternal (ex, errors, new HttpHeaders (), HttpStatus.NOT_FOUND, request);
       }
-    private ResponseEntity<Object> handleExceptionInternal(EmptyResultDataAccessException ex, List<Error> errors,
-      HttpHeaders   headers, HttpStatus httpStatus, WebRequest request) {
+
+    private ResponseEntity<Object> handleExceptionInternal(EmptyResultDataAccessException ex, List<Error> errors, HttpHeaders httpHeaders, HttpStatus httpStatus, WebRequest request) {
+        return null;
+    }
+
+    @ExceptionHandler(RegraNegocioException.class)
+      public ResponseEntity<Object> handleRegraNegocioException( RegraNegocioException ex, WebRequest request) {
+         String msgUsuario = ex.getMessage ();
+         String msgDesenvolvedor = ex.getMessage ();
+         List<Error> errors = Arrays.asList (new Error (msgUsuario, msgDesenvolvedor));
+         return handleExceptionInternal (ex, errors, new HttpHeaders (), HttpStatus.BAD_REQUEST, request);
+      }
+
+    private ResponseEntity<Object> handleExceptionInternal(RegraNegocioException ex, List<Error> errors,
+         HttpHeaders   headers, HttpStatus httpStatus, WebRequest request) {
         return null;
     }
 

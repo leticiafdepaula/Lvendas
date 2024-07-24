@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="eb18128d-7b99-44e7-9cc6-0e28f41669ad" name="Changes" comment="criando as tabelas">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lvendas/gestao_vendas/controlador/CategoriaControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lvendas/gestao_vendas/controlador/CategoriaControlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lvendas/gestao_vendas/excecao/GestaoVendasExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lvendas/gestao_vendas/excecao/GestaoVendasExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lvendas/gestao_vendas/repositorio/CategoriaRepositorio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lvendas/gestao_vendas/repositorio/CategoriaRepositorio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lvendas/gestao_vendas/servico/CategoriaServico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lvendas/gestao_vendas/servico/CategoriaServico.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,6 +57,10 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.lvendas.gestao_vendas.excecao" />
+      <recent name="com.lvendas.gestao_vendas.servico" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\leticia\OneDrive\Área de Trabalho\JavaWorkspace\gestao-vendas\src\main\resources\Db" />
       <recent name="C:\Users\leticia\OneDrive\Área de Trabalho\JavaWorkspace\gestao-vendas\src\main\resources\Migration" />
