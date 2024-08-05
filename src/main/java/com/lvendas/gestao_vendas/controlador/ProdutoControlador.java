@@ -4,6 +4,7 @@ import com.lvendas.gestao_vendas.entidade.Produto;
 import com.lvendas.gestao_vendas.servico.ProdutoServico;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -32,8 +33,9 @@ public class ProdutoControlador {
         Optional<Produto> produto = produtoServico.buscarPorCodigo(codigo, codigoCategoria);
         return produto.isPresent () ? (ResponseEntity<Optional<ProdutoServico>>) ResponseEntity.ok () : ResponseEntity.notFound ().build ();
     }
+
       @PostMapping
-       public ResponseEntity<Produto> salvar(@RequestBody Produto produto){
+       public ResponseEntity<Produto> salvar(@Valid @RequestBody Produto produto){
         Produto ProdutoSalvo = produtoServico.salvar (produto);
         return ResponseEntity.status (HttpStatus.CREATED).body(produto);
 

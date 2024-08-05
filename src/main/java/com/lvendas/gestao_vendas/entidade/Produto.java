@@ -1,5 +1,9 @@
 package com.lvendas.gestao_vendas.entidade;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import org.hibernate.validator.constraints.Length;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Objects;
@@ -13,15 +17,23 @@ public class Produto {
     @Column(name = "codigo")
     private Long codigo;
     @Column(name = "descricao")
+    @NotBlank(message = "Descrição")
+    @Length(min = 3, max = 100, message = "descrição")
     private String descricao;
+    @NotNull(message = "Quantidade")
     @Column(name = "quantidade")
     private Integer quantidade;
-    @Column(name = "preco_custo")
+    @NotNull(message = "Preco custo")
+    @Column(name = "Preco_custo")
     private BigDecimal precoCusto;
+    @NotNull(message = "Preco venda")
     @Column(name = "preco_venda")
     private BigDecimal precoVenda;
+    @Length(max = 500, message = "observação")
     @Column(name = "observacao")
     private String observacao;
+
+    @NotNull(message = "Codigo Categoria")
     @ManyToOne
     @JoinColumn(name = "codigo_categoria", referencedColumnName = "codigo")
     private Categoria categoria;

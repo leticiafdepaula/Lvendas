@@ -18,6 +18,7 @@ import java.util.List;
 @ControllerAdvice
 public class GestaoVendasExceptionHandler extends ResponseEntityExceptionHandler {
     private static final String CONSTANT_VALIDATION_NOTBLANK = "NotBlank";
+    private static final String CONSTANT_VALIDATION_NOT_NULL = "NotNull";
     private static final String CONSTANT_VALIDATION_LENGTH = "Length";
 
     @Override
@@ -63,6 +64,10 @@ public class GestaoVendasExceptionHandler extends ResponseEntityExceptionHandler
         if (fieldError.getCode ().equals (CONSTANT_VALIDATION_NOTBLANK)) {
             return fieldError.getDefaultMessage ().concat ("É obrigatorio.");
         }
+
+        if (fieldError.getCode ().equals (CONSTANT_VALIDATION_NOT_NULL)) {
+                return fieldError.getDefaultMessage ().concat ("É obrigatorio.");
+            }
         if (fieldError.getCode ().equals ("Length")) {
             return fieldError.getDefaultMessage ().concat (String.format ("Deve ter entre %x e %s caracteres",
            fieldError.getArguments ()[2], fieldError.getArguments ()[1]));
