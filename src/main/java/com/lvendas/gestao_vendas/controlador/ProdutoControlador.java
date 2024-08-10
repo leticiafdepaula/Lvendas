@@ -20,6 +20,7 @@ public class ProdutoControlador {
     @Autowired
     private ProdutoServico produtoServico;
 
+
     @ApiOperation (value = "listar", nickname = "listarTodos")
     @GetMapping
     public List<Produto> listarTodos(@PathVariable Long codigoCategoria) {
@@ -30,15 +31,20 @@ public class ProdutoControlador {
     @GetMapping
     public ResponseEntity<Optional<ProdutoServico>> buscarPorCodigo(@PathVariable Long codigoCategoria,
             @PathVariable Long codigo) {
-        Optional<Produto> produto = produtoServico.buscarPorCodigo(codigo, codigoCategoria);
+        Optional<Produto> produto = produtoServico.buscarPorCodigo(codigo);
         return produto.isPresent () ? (ResponseEntity<Optional<ProdutoServico>>) ResponseEntity.ok () : ResponseEntity.notFound ().build ();
     }
 
       @PostMapping
        public ResponseEntity<Produto> salvar(@Valid @RequestBody Produto produto){
-        Produto ProdutoSalvo = produtoServico.salvar (produto);
+          Produto ProdutoSalvo = produtoServico.salvar (produto.getCategoria ());
         return ResponseEntity.status (HttpStatus.CREATED).body(produto);
 
     }
-
+    @ApiOperation (value = "deletar", nickname = "deletarProduto")
+     @DeleteMapping("/{codigoProduto}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deletar(@PathVariable Long codigoCategoria, @PathVariable Long codigoProduto) {
+      produtoServico.deletar (codigoProduto,codigoCategoria);
+    }
 }

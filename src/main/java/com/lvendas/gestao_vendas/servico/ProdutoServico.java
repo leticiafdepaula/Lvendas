@@ -1,5 +1,6 @@
 package com.lvendas.gestao_vendas.servico;
 
+import com.lvendas.gestao_vendas.entidade.Categoria;
 import com.lvendas.gestao_vendas.entidade.Produto;
 import com.lvendas.gestao_vendas.excecao.RegraNegocioException;
 import com.lvendas.gestao_vendas.repositorio.ProdutoRepositorio;
@@ -21,10 +22,10 @@ public class ProdutoServico {
         return produtoRepositorio.findByCategoriaCodigo(codigoCategoria);
     }
 
-    public Optional<Produto> buscarPorCodigo(Long codigo, Long codigoCategoria) {
-        return produtoRepositorio.buscarPorCodigo(codigo, codigoCategoria);
+    public Optional<Produto> buscarPorCodigo(Long codigo) {
+        return produtoRepositorio.buscarPorCodigo(codigo);
     }
-    public Produto salvar (Produto produto) {
+    public Produto salvar (Categoria produto) {
         validarCategoriaDoProdutoExiste (produto.getCategoria ().getCodigo ());
         validarProdutoDuplicado (produto);
         return produtoRepositorio.save (produto);
@@ -36,8 +37,15 @@ public class ProdutoServico {
         BeanUtils.copyProperties (produtoSalvar, produto, "codigo");
         return produtoRepositorio.save (produtoSalvar);
     }
+
+
+    public void deletar(Long codigoCategoria, Long codigoDoProduto) {
+        Produto produto = validarProdutoExiste (codigoDoProduto, codigoCategoria);
+              produtoRepositorio.delete (produto);
+    }
+
     private Produto validarProdutoExiste(Long codigoProduto, Long codigoCategoria) {
-        Optional<Produto> produto = buscarPorCodigo (codigoProduto, codigoCategoria);
+        Optional<Produto> produto = buscarPorCodigo (codigoProduto);
         if (produto.isEmpty ()) {
             throw new EmptyResultDataAccessException (1);
         }
@@ -58,6 +66,5 @@ public class ProdutoServico {
     }
     }
 
-    public void deletar(Long codigo) {
-    }
+
 }
