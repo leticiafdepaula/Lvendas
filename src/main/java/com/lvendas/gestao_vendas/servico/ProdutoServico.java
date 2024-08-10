@@ -32,7 +32,7 @@ public class ProdutoServico {
     }
     public Produto Atualizar(Long codigoCategoria, Long codigoProduto, Produto produto) {
      Produto produtoSalvar = validarProdutoExiste(codigoProduto, codigoCategoria);
-        validarProdutoDuplicado (produto);
+        validarProdutoDuplicado (produto.getCategoria ());
         validarCategoriaDoProdutoExiste (codigoCategoria);
         BeanUtils.copyProperties (produtoSalvar, produto, "codigo");
         return produtoRepositorio.save (produtoSalvar);
@@ -52,7 +52,7 @@ public class ProdutoServico {
     return produto.get ();
     }
 
-    private void validarProdutoDuplicado(Produto produto) {
+    private void validarProdutoDuplicado(Categoria produto) {
         if (produtoRepositorio.findByCategoriaCodigoAndDescricao (produto.getCategoria().getCodigo (), produto.getDescricao ()).isPresent ()) {
             throw new RegraNegocioException(String.format ("O produto %s, já está cadastrado!", produto.getDescricao ()));
         }

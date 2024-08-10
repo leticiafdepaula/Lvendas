@@ -1,12 +1,17 @@
 package com.lvendas.gestao_vendas.entidade;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 import javax.persistence.*;
 import java.util.Objects;
 
+@ApiModel("Categoria requisição DTO")
 @Entity
 @Table(name = "categoria")
 public class Categoria {
 
+    @ApiModelProperty(value = "Nome")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "codigo")
@@ -14,8 +19,11 @@ public class Categoria {
     @Column(name = "nome")
     private String nome;
 
+    public Categoria(Long codigo, String nome) {
+        this.codigo = codigo;
+        this.nome = nome;
+    }
     public Categoria( ) {
-
     }
 
     public Categoria(String nome) {

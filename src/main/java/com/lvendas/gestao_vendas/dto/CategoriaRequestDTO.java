@@ -17,7 +17,13 @@ public class CategoriaRequestDTO {
 
 
     public Categoria converterParaEntidade() {
+
         return new Categoria (nome);
+    }
+
+    public Categoria converterParaEntidade(Long codigo) {
+
+        return new Categoria (codigo, nome);
     }
 
 }
