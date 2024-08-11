@@ -1,9 +1,11 @@
 package com.lvendas.gestao_vendas.servico;
 
+import com.lvendas.gestao_vendas.dto.produto.ProdutoRequestDTO;
 import com.lvendas.gestao_vendas.entidade.Categoria;
 import com.lvendas.gestao_vendas.entidade.Produto;
 import com.lvendas.gestao_vendas.excecao.RegraNegocioException;
 import com.lvendas.gestao_vendas.repositorio.ProdutoRepositorio;
+import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -30,7 +32,7 @@ public class ProdutoServico {
         validarProdutoDuplicado (produto);
         return produtoRepositorio.save (produto);
     }
-    public Produto Atualizar(Long codigoCategoria, Long codigoProduto, Produto produto) {
+    public Produto Atualizar(Long codigoCategoria, Long codigoProduto, @Valid ProdutoRequestDTO produto) {
      Produto produtoSalvar = validarProdutoExiste(codigoProduto, codigoCategoria);
         validarProdutoDuplicado (produto.getCategoria ());
         validarCategoriaDoProdutoExiste (codigoCategoria);
@@ -67,4 +69,6 @@ public class ProdutoServico {
     }
 
 
+    public Produto salvar(Long codigoCategoria, Produto produto) {
+    }
 }

@@ -1,5 +1,6 @@
 package com.lvendas.gestao_vendas.controlador;
 
+import com.lvendas.gestao_vendas.dto.produto.ProdutoRequestDTO;
 import com.lvendas.gestao_vendas.dto.produto.ProdutoResponseDTO;
 import com.lvendas.gestao_vendas.entidade.Produto;
 import com.lvendas.gestao_vendas.servico.ProdutoServico;
@@ -38,12 +39,19 @@ public class ProdutoControlador {
           return produto.isPresent () ? ResponseEntity.ok (ProdutoResponseDTO.
           converterParaProdutoDTO (produto.get ())) : ResponseEntity.notFound ().build ();
     }
-
+    @ApiOperation(value = "salvar", nickname = "salvarProduto")
     @PostMapping
-    public ResponseEntity<Produto> salvar(@Valid @RequestBody Produto produto) {
-        Produto ProdutoSalvo = produtoServico.salvar (produto.getCategoria ());
-        return ResponseEntity.status (HttpStatus.CREATED).body (produto);
+    public ResponseEntity<ProdutoResponseDTO> salvar(@PathVariable Long codigoCategoria, @Valid @RequestBody ProdutoRequestDTO produto) {
+        Produto produtoSalvo = produtoServico.salvar(codigoCategoria, produto.converterParaEntidade (codigoCategoria));
+        return ResponseEntity.status (HttpStatus.CREATED).body (ProdutoResponseDTO.converterParaProdutoDTO (produtoSalvo));
 
+    }
+     @ApiOperation (value = "Atualizar", nickname = "AtualizarProduto")
+    @PutMapping("/{codigoProduto}")
+    public ResponseEntity<ProdutoResponseDTO> atualizar(@PathVariable Long codigoCategoria, @PathVariable
+    Long codigoProduto, @Valid @RequestBody ProdutoRequestDTO produto) {
+         Produto produtoAtualizado = produtoServico.Atualizar (codigoCategoria, codigoProduto, produto.converterParaEntidade (codigoCategoria, codigoProduto));
+         return ResponseEntity.ok(ProdutoResponseDTO.converterParaProdutoDTO (produtoAtualizado));
     }
 
     @ApiOperation(value = "deletar", nickname = "deletarProduto")
