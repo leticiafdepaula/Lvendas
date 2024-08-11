@@ -112,4 +112,6 @@ public class Produto {
         return Objects.hash (getCodigo (), getDescricao (), getQuantidade (), getPrecoCusto (),
                 getPrecoVenda (), getObservacao (), getCategoria ());
     }
+
+
 }

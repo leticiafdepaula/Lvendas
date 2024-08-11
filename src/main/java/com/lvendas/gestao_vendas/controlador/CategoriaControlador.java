@@ -1,7 +1,7 @@
 package com.lvendas.gestao_vendas.controlador;
 
-import com.lvendas.gestao_vendas.dto.CategoriaRequestDTO;
-import com.lvendas.gestao_vendas.dto.CategoriaResponseDto;
+import com.lvendas.gestao_vendas.dto.categoria.CategoriaRequestDTO;
+import com.lvendas.gestao_vendas.dto.categoria.CategoriaResponseDto;
 import com.lvendas.gestao_vendas.entidade.Categoria;
 import com.lvendas.gestao_vendas.entidade.Produto;
 import com.lvendas.gestao_vendas.servico.CategoriaServico;
